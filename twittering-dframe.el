@@ -27,6 +27,15 @@
 (require 'dframe)
 (require 'twittering-mode)
 
+(defcustom twittering-dframe-frame-parameter
+  '((buffer-predicate . twittering-buffer-p)
+    (left-fringe . 0)
+    (minibuffer . nil)
+    (title . "twittering")
+    (unsplittable . t))
+  ""
+  :type '(alist))
+
 (defvar twittering-dframe-buffer)
 (defvar twittering-dframe-cached-frame nil)
 (defvar twittering-dframe-frame nil)
@@ -42,13 +51,7 @@
 		     'twittering-dframe-buffer
 		     "Twittering"
 		     nil
-		     '((buffer-predicate . twittering-buffer-p)
-		       (left-fringe . 0)
-		       (minibuffer)
-		       (right-fringe . 0)
-		       (title . "twittering")
-		       (unsplittable . t)
-		       (vertical-scroll-bars))))
+		     twittering-dframe-frame-parameter))
 
 (provide 'twittering-dframe)
 ;;; twittering-dframe.el ends here
