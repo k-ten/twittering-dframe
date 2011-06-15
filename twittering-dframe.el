@@ -40,6 +40,7 @@
 (defvar twittering-dframe-cached-frame nil)
 (defvar twittering-dframe-frame nil)
 
+;;;###autoload
 (defun twittering-dframe-frame-mode (&optional arg)
   (interactive "P")
   (save-window-excursion
@@ -54,4 +55,5 @@
 		     twittering-dframe-frame-parameter))
 
 (provide 'twittering-dframe)
+
 ;;; twittering-dframe.el ends here
